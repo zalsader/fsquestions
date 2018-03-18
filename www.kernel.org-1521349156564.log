@@ -1,0 +1,400 @@
+index.html:1 Error parsing header X-XSS-Protection: : 1; mode=block: expected 0 or 1 at character position 0. The default protections will be applied.
+modernizr.min.js:4 Refused to apply inline style because it violates the following Content Security Policy directive: "default-src https:". Either the 'unsafe-inline' keyword, a hash ('sha256-MZKTI0Eg1N13tshpFaVW65co/LeICXq4hyVx6GWVlK0='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+y @ modernizr.min.js:4
+modernizr.min.js:4 Refused to apply inline style because it violates the following Content Security Policy directive: "default-src https:". Either the 'unsafe-inline' keyword, a hash ('sha256-LpfmXS+4ZtL2uPRZgkoR29Ghbxcfime/CsD/4w5VujE='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+y @ modernizr.min.js:4
+modernizr.min.js:4 Refused to apply inline style because it violates the following Content Security Policy directive: "default-src https:". Either the 'unsafe-inline' keyword, a hash ('sha256-YJO/M9OgDKEBRKGqp4Zd07dzlagbB+qmKgThG52u/Mk='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+y @ modernizr.min.js:4
+index.html:6972 Refused to execute inline script because it violates the following Content Security Policy directive: "default-src https:". Either the 'unsafe-inline' keyword, a hash ('sha256-AXR4N3yFLSUto+qHeduGcURaDeF6lJG2F2YkGrUprH0='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'script-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+index.html:6995 Refused to execute inline script because it violates the following Content Security Policy directive: "default-src https:". Either the 'unsafe-inline' keyword, a hash ('sha256-42O687h8PJEv1RLnAVlaiagcEYg/NX8tU2E+PPkBbSs='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'script-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+index.html:1 Refused to load the image 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6e...NTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC' because it violates the following Content Security Policy directive: "default-src https:". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+fontawesome-webfont.woff2 Failed to load resource: the server responded with a status of 404 (Not Found)
+jquery.js:2 jQuery.Deferred exception: DOCUMENTATION_OPTIONS is not defined ReferenceError: DOCUMENTATION_OPTIONS is not defined
+    at Object.initIndexTable (https://www.kernel.org/doc/html/v4.14/_static/doctools.js:224:5)
+    at Object.init (https://www.kernel.org/doc/html/v4.14/_static/doctools.js:126:10)
+    at HTMLDocument.<anonymous> (https://www.kernel.org/doc/html/v4.14/_static/doctools.js:286:17)
+    at j (https://www.kernel.org/doc/html/v4.14/_static/jquery.js:2:29568)
+    at k (https://www.kernel.org/doc/html/v4.14/_static/jquery.js:2:29882) undefined
+r.Deferred.exceptionHook @ jquery.js:2
+index.html:1 Refused to load the image 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6e...NTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC' because it violates the following Content Security Policy directive: "default-src https:". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+jquery.js:2 Uncaught ReferenceError: DOCUMENTATION_OPTIONS is not defined
+    at Object.initIndexTable (doctools.js:224)
+    at Object.init (doctools.js:126)
+    at HTMLDocument.<anonymous> (doctools.js:286)
+    at j (jquery.js:2)
+    at k (jquery.js:2)
+index.html#the-linux-vfs:1 Refused to load the image 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6e...NTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC' because it violates the following Content Security Policy directive: "default-src https:". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+$('code')
+r.fn.init(1452) [code.descname, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.xref.c.c-func.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.xref.c.c-func.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.descname, code.docutils.literal, code.docutils.literal, code.docutils.literal, code.descname, …]
+$('code.descname')
+r.fn.init(310) [code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, …][0 … 99]0: code.descnameaccessKey: ""assignedSlot: nullattributes: NamedNodeMap {0: class, class: class, length: 1}baseURI: "https://www.kernel.org/doc/html/v4.14/filesystems/index.html#the-linux-vfs"childElementCount: 0childNodes: NodeList [text]children: HTMLCollection []classList: DOMTokenList ["descname", value: "descname"]className: "descname"clientHeight: 0clientLeft: 0clientTop: 0clientWidth: 0contentEditable: "inherit"dataset: DOMStringMap {}dir: ""draggable: falsefirstChild: textfirstElementChild: nullhidden: falseid: ""innerHTML: "positive_aop_returns"innerText: "positive_aop_returns"isConnected: trueisContentEditable: falselang: ""lastChild: textlastElementChild: nulllocalName: "code"namespaceURI: "http://www.w3.org/1999/xhtml"nextElementSibling: a.headerlinknextSibling: a.headerlinknodeName: "CODE"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 18offsetLeft: 46offsetParent: dt#c.positive_aop_returnsoffsetTop: 7offsetWidth: 158onabort: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforepaste: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontextmenu: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonsearch: nullonseeked: nullonseeking: nullonselect: nullonselectstart: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontouchcancel: nullontouchend: nullontouchmove: nullontouchstart: nullonvolumechange: nullonwaiting: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwheel: nullouterHTML: "<code class="descname">positive_aop_returns</code>"outerText: "positive_aop_returns"ownerDocument: documentparentElement: dt#c.positive_aop_returnsparentNode: dt#c.positive_aop_returnsprefix: nullpreviousElementSibling: nullpreviousSibling: textscrollHeight: 0scrollLeft: 0scrollTop: 0scrollWidth: 0shadowRoot: (...)slot: ""spellcheck: truestyle: CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}tabIndex: -1tagName: "CODE"textContent: "positive_aop_returns"title: ""translate: true__proto__: HTMLElement1: code.descname2: code.descname3: code.descname4: code.descname5: code.descname6: code.descname7: code.descname8: code.descname9: code.descname10: code.descname11: code.descname12: code.descname13: code.descname14: code.descname15: code.descname16: code.descname17: code.descname18: code.descname19: code.descname20: code.descname21: code.descname22: code.descname23: code.descname24: code.descname25: code.descname26: code.descname27: code.descname28: code.descname29: code.descname30: code.descname31: code.descname32: code.descname33: code.descname34: code.descname35: code.descname36: code.descname37: code.descname38: code.descname39: code.descname40: code.descname41: code.descname42: code.descname43: code.descname44: code.descname45: code.descname46: code.descname47: code.descname48: code.descname49: code.descname50: code.descname51: code.descname52: code.descname53: code.descname54: code.descname55: code.descname56: code.descname57: code.descname58: code.descname59: code.descname60: code.descname61: code.descname62: code.descname63: code.descname64: code.descname65: code.descname66: code.descname67: code.descname68: code.descname69: code.descname70: code.descname71: code.descname72: code.descname73: code.descname74: code.descname75: code.descname76: code.descname77: code.descname78: code.descname79: code.descname80: code.descname81: code.descname82: code.descname83: code.descname84: code.descname85: code.descname86: code.descname87: code.descname88: code.descname89: code.descname90: code.descname91: code.descname92: code.descname93: code.descname94: code.descname95: code.descname96: code.descname97: code.descname98: code.descname99: code.descname[100 … 199][200 … 299][300 … 309]length: 310prevObject: r.fn.init [document]__proto__: Object(0)
+$('code.descname').val()
+""
+$('code.descname').value
+undefined
+$('code.descname').map(function(i,e){return e.val()})
+VM235:1 Uncaught TypeError: e.val is not a function
+    at HTMLElement.<anonymous> (<anonymous>:1:47)
+    at jquery.js:2
+    at Function.map (jquery.js:2)
+    at r.fn.init.map (jquery.js:2)
+    at <anonymous>:1:20
+(anonymous) @ VM235:1
+(anonymous) @ jquery.js:2
+map @ jquery.js:2
+map @ jquery.js:2
+(anonymous) @ VM235:1
+$('code.descname').map(function(i,e){return e.text()})
+VM240:1 Uncaught TypeError: e.text is not a function
+    at HTMLElement.<anonymous> (<anonymous>:1:47)
+    at jquery.js:2
+    at Function.map (jquery.js:2)
+    at r.fn.init.map (jquery.js:2)
+    at <anonymous>:1:20
+(anonymous) @ VM240:1
+(anonymous) @ jquery.js:2
+map @ jquery.js:2
+map @ jquery.js:2
+(anonymous) @ VM240:1
+$('code.descname').map(function(i,e){return e.contents()})
+VM253:1 Uncaught TypeError: e.contents is not a function
+    at HTMLElement.<anonymous> (<anonymous>:1:47)
+    at jquery.js:2
+    at Function.map (jquery.js:2)
+    at r.fn.init.map (jquery.js:2)
+    at <anonymous>:1:20
+(anonymous) @ VM253:1
+(anonymous) @ jquery.js:2
+map @ jquery.js:2
+map @ jquery.js:2
+(anonymous) @ VM253:1
+$('code.descname')
+r.fn.init(310) [code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, …]
+temp1
+r.fn.init(310) [code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, code.descname, …]
+temp1[0]
+<code class=​"descname">​positive_aop_returns​</code>​
+$('code.descname').map(function(i,e){return e.innerHTML})
+r.fn.init(310) ["positive_aop_returns", "sb_end_write", "sb_end_pagefault", "sb_end_intwrite", "sb_start_write", "sb_start_pagefault", "inode_inc_iversion", "filemap_set_wb_err", "filemap_check_wb_err", "filemap_sample_wb_err", "__d_drop", "shrink_dcache_sb", "path_has_submounts", "shrink_dcache_parent", "d_invalidate", "d_alloc", "d_alloc_pseudo", "d_instantiate", "d_instantiate_no_diralias", "d_find_any_alias", "d_obtain_alias", "d_obtain_root", "d_add_ci", "d_lookup", "d_hash_and_lookup", "d_delete", "d_rehash", "d_add", "d_exact_alias", "dentry_update_name_case", "d_splice_alias", "d_path", "dget_dlock", "d_unhashed", "d_really_is_negative", "d_really_is_positive", "d_inode", "d_inode_rcu", "d_backing_inode", "d_backing_dentry", "d_real", "d_real_inode", "inode_init_always", "drop_nlink", "clear_nlink", "set_nlink", "inc_nlink", "inode_sb_list_add", "__insert_inode_hash", "__remove_inode_hash", "evict_inodes", "new_inode", "unlock_new_inode", "lock_two_nondirectories", "unlock_two_nondirectories", "iget5_locked", "iget_locked", "iunique", "ilookup5_nowait", "ilookup5", "ilookup", "find_inode_nowait", "iput", "bmap", "file_update_time", "inode_init_owner", "inode_owner_or_capable", "inode_dio_wait", "current_time", "make_bad_inode", "is_bad_inode", "iget_failed", "deactivate_locked_super", "deactivate_super", "generic_shutdown_super", "sget_userns", "sget", "iterate_supers_type", "get_super", "get_super_thawed", "get_super_exclusive_thawed", "freeze_super", "thaw_super", "posix_lock_file", "locks_mandatory_area", "__break_lease", "lease_get_mtime", "generic_setlease", "vfs_setlease", "locks_lock_inode_wait", "vfs_test_lock", "vfs_lock_file", "posix_unblock_lock", "vfs_cancel_lock", "posix_lock_inode_wait", "locks_mandatory_locked", "fcntl_getlease", "check_conflicting_open", "fcntl_setlease", "flock_lock_inode_wait", …]
+temp2
+r.fn.init(310) ["positive_aop_returns", "sb_end_write", "sb_end_pagefault", "sb_end_intwrite", "sb_start_write", "sb_start_pagefault", "inode_inc_iversion", "filemap_set_wb_err", "filemap_check_wb_err", "filemap_sample_wb_err", "__d_drop", "shrink_dcache_sb", "path_has_submounts", "shrink_dcache_parent", "d_invalidate", "d_alloc", "d_alloc_pseudo", "d_instantiate", "d_instantiate_no_diralias", "d_find_any_alias", "d_obtain_alias", "d_obtain_root", "d_add_ci", "d_lookup", "d_hash_and_lookup", "d_delete", "d_rehash", "d_add", "d_exact_alias", "dentry_update_name_case", "d_splice_alias", "d_path", "dget_dlock", "d_unhashed", "d_really_is_negative", "d_really_is_positive", "d_inode", "d_inode_rcu", "d_backing_inode", "d_backing_dentry", "d_real", "d_real_inode", "inode_init_always", "drop_nlink", "clear_nlink", "set_nlink", "inc_nlink", "inode_sb_list_add", "__insert_inode_hash", "__remove_inode_hash", "evict_inodes", "new_inode", "unlock_new_inode", "lock_two_nondirectories", "unlock_two_nondirectories", "iget5_locked", "iget_locked", "iunique", "ilookup5_nowait", "ilookup5", "ilookup", "find_inode_nowait", "iput", "bmap", "file_update_time", "inode_init_owner", "inode_owner_or_capable", "inode_dio_wait", "current_time", "make_bad_inode", "is_bad_inode", "iget_failed", "deactivate_locked_super", "deactivate_super", "generic_shutdown_super", "sget_userns", "sget", "iterate_supers_type", "get_super", "get_super_thawed", "get_super_exclusive_thawed", "freeze_super", "thaw_super", "posix_lock_file", "locks_mandatory_area", "__break_lease", "lease_get_mtime", "generic_setlease", "vfs_setlease", "locks_lock_inode_wait", "vfs_test_lock", "vfs_lock_file", "posix_unblock_lock", "vfs_cancel_lock", "posix_lock_inode_wait", "locks_mandatory_locked", "fcntl_getlease", "check_conflicting_open", "fcntl_setlease", "flock_lock_inode_wait", …]
+for (i=0; i < temp2.length; i++){console.log(temp2[i])}
+VM414:1 positive_aop_returns
+VM414:1 sb_end_write
+VM414:1 sb_end_pagefault
+VM414:1 sb_end_intwrite
+VM414:1 sb_start_write
+VM414:1 sb_start_pagefault
+VM414:1 inode_inc_iversion
+VM414:1 filemap_set_wb_err
+VM414:1 filemap_check_wb_err
+VM414:1 filemap_sample_wb_err
+VM414:1 __d_drop
+VM414:1 shrink_dcache_sb
+VM414:1 path_has_submounts
+VM414:1 shrink_dcache_parent
+VM414:1 d_invalidate
+VM414:1 d_alloc
+VM414:1 d_alloc_pseudo
+VM414:1 d_instantiate
+VM414:1 d_instantiate_no_diralias
+VM414:1 d_find_any_alias
+VM414:1 d_obtain_alias
+VM414:1 d_obtain_root
+VM414:1 d_add_ci
+VM414:1 d_lookup
+VM414:1 d_hash_and_lookup
+VM414:1 d_delete
+VM414:1 d_rehash
+VM414:1 d_add
+VM414:1 d_exact_alias
+VM414:1 dentry_update_name_case
+VM414:1 d_splice_alias
+VM414:1 d_path
+VM414:1 dget_dlock
+VM414:1 d_unhashed
+VM414:1 d_really_is_negative
+VM414:1 d_really_is_positive
+VM414:1 d_inode
+VM414:1 d_inode_rcu
+VM414:1 d_backing_inode
+VM414:1 d_backing_dentry
+VM414:1 d_real
+VM414:1 d_real_inode
+VM414:1 inode_init_always
+VM414:1 drop_nlink
+VM414:1 clear_nlink
+VM414:1 set_nlink
+VM414:1 inc_nlink
+VM414:1 inode_sb_list_add
+VM414:1 __insert_inode_hash
+VM414:1 __remove_inode_hash
+VM414:1 evict_inodes
+VM414:1 new_inode
+VM414:1 unlock_new_inode
+VM414:1 lock_two_nondirectories
+VM414:1 unlock_two_nondirectories
+VM414:1 iget5_locked
+VM414:1 iget_locked
+VM414:1 iunique
+VM414:1 ilookup5_nowait
+VM414:1 ilookup5
+VM414:1 ilookup
+VM414:1 find_inode_nowait
+VM414:1 iput
+VM414:1 bmap
+VM414:1 file_update_time
+VM414:1 inode_init_owner
+VM414:1 inode_owner_or_capable
+VM414:1 inode_dio_wait
+VM414:1 current_time
+VM414:1 make_bad_inode
+VM414:1 is_bad_inode
+VM414:1 iget_failed
+VM414:1 deactivate_locked_super
+VM414:1 deactivate_super
+VM414:1 generic_shutdown_super
+VM414:1 sget_userns
+VM414:1 sget
+VM414:1 iterate_supers_type
+VM414:1 get_super
+VM414:1 get_super_thawed
+VM414:1 get_super_exclusive_thawed
+VM414:1 freeze_super
+VM414:1 thaw_super
+VM414:1 posix_lock_file
+VM414:1 locks_mandatory_area
+VM414:1 __break_lease
+VM414:1 lease_get_mtime
+VM414:1 generic_setlease
+VM414:1 vfs_setlease
+VM414:1 locks_lock_inode_wait
+VM414:1 vfs_test_lock
+VM414:1 vfs_lock_file
+VM414:1 posix_unblock_lock
+VM414:1 vfs_cancel_lock
+VM414:1 posix_lock_inode_wait
+VM414:1 locks_mandatory_locked
+VM414:1 fcntl_getlease
+VM414:1 check_conflicting_open
+VM414:1 fcntl_setlease
+VM414:1 flock_lock_inode_wait
+VM414:1 sys_flock
+VM414:1 locks_translate_pid
+VM414:1 mpage_readpages
+VM414:1 mpage_writepages
+VM414:1 generic_permission
+VM414:1 __inode_permission
+VM414:1 inode_permission
+VM414:1 path_get
+VM414:1 path_put
+VM414:1 vfs_path_lookup
+VM414:1 lookup_one_len
+VM414:1 lookup_one_len_unlocked
+VM414:1 vfs_unlink
+VM414:1 vfs_link
+VM414:1 vfs_rename
+VM414:1 vfs_readlink
+VM414:1 vfs_get_link
+VM414:1 sync_mapping_buffers
+VM414:1 mark_buffer_dirty
+VM414:1 __bread_gfp
+VM414:1 block_invalidatepage
+VM414:1 clean_bdev_aliases
+VM414:1 ll_rw_block
+VM414:1 bh_uptodate_or_lock
+VM414:1 bh_submit_read
+VM414:1 bio_reset
+VM414:1 bio_chain
+VM414:1 bio_alloc_bioset
+VM414:1 bio_put
+VM414:1 __bio_clone_fast
+VM414:1 bio_clone_fast
+VM414:1 bio_clone_bioset
+VM414:1 bio_add_pc_page
+VM414:1 bio_add_page
+VM414:1 bio_iov_iter_get_pages
+VM414:1 submit_bio_wait
+VM414:1 bio_advance
+VM414:1 bio_alloc_pages
+VM414:1 bio_copy_data
+VM414:1 bio_map_kern
+VM414:1 bio_endio
+VM414:1 bio_split
+VM414:1 bio_trim
+VM414:1 bioset_create
+VM414:1 bio_associate_blkcg
+VM414:1 bio_associate_current
+VM414:1 bio_clone_blkcg_association
+VM414:1 seq_open
+VM414:1 seq_read
+VM414:1 seq_lseek
+VM414:1 seq_release
+VM414:1 seq_escape
+VM414:1 mangle_path
+VM414:1 seq_path
+VM414:1 seq_file_path
+VM414:1 seq_write
+VM414:1 seq_pad
+VM414:1 seq_hlist_start
+VM414:1 seq_hlist_start_head
+VM414:1 seq_hlist_next
+VM414:1 seq_hlist_start_rcu
+VM414:1 seq_hlist_start_head_rcu
+VM414:1 seq_hlist_next_rcu
+VM414:1 seq_hlist_start_percpu
+VM414:1 seq_hlist_next_percpu
+VM414:1 register_filesystem
+VM414:1 unregister_filesystem
+VM414:1 wbc_account_io
+VM414:1 inode_congested
+VM414:1 __mark_inode_dirty
+VM414:1 writeback_inodes_sb_nr
+VM414:1 writeback_inodes_sb
+VM414:1 try_to_writeback_inodes_sb_nr
+VM414:1 try_to_writeback_inodes_sb
+VM414:1 sync_inodes_sb
+VM414:1 write_inode_now
+VM414:1 sync_inode
+VM414:1 sync_inode_metadata
+VM414:1 freeze_bdev
+VM414:1 thaw_bdev
+VM414:1 bdev_read_page
+VM414:1 bdev_write_page
+VM414:1 bdgrab
+VM414:1 bd_link_disk_holder
+VM414:1 bd_unlink_disk_holder
+VM414:1 check_disk_size_change
+VM414:1 revalidate_disk
+VM414:1 blkdev_get
+VM414:1 blkdev_get_by_path
+VM414:1 blkdev_get_by_dev
+VM414:1 lookup_bdev
+VM414:1 proc_dostring
+VM414:1 proc_dointvec
+VM414:1 proc_douintvec
+VM414:1 proc_dointvec_minmax
+VM414:1 proc_douintvec_minmax
+VM414:1 proc_doulongvec_minmax
+VM414:1 proc_doulongvec_ms_jiffies_minmax
+VM414:1 proc_dointvec_jiffies
+VM414:1 proc_dointvec_userhz_jiffies
+VM414:1 proc_dointvec_ms_jiffies
+VM414:1 proc_flush_task
+VM414:1 eventfd_signal
+VM414:1 eventfd_ctx_get
+VM414:1 eventfd_ctx_put
+VM414:1 eventfd_ctx_remove_wait_queue
+VM414:1 eventfd_ctx_read
+VM414:1 eventfd_fget
+VM414:1 eventfd_ctx_fdget
+VM414:1 eventfd_ctx_fileget
+VM414:1 sysfs_create_file_ns
+VM414:1 sysfs_add_file_to_group
+VM414:1 sysfs_chmod_file
+VM414:1 sysfs_remove_file_ns
+VM414:1 sysfs_remove_file_from_group
+VM414:1 sysfs_create_bin_file
+VM414:1 sysfs_remove_bin_file
+VM414:1 sysfs_create_link
+VM414:1 sysfs_remove_link
+VM414:1 sysfs_rename_link_ns
+VM414:1 debugfs_lookup
+VM414:1 debugfs_create_file
+VM414:1 debugfs_create_file_unsafe
+VM414:1 debugfs_create_file_size
+VM414:1 debugfs_create_dir
+VM414:1 debugfs_create_automount
+VM414:1 debugfs_create_symlink
+VM414:1 debugfs_remove
+VM414:1 debugfs_remove_recursive
+VM414:1 debugfs_rename
+VM414:1 debugfs_initialized
+VM414:1 debugfs_use_file_start
+VM414:1 debugfs_use_file_finish
+VM414:1 debugfs_create_u8
+VM414:1 debugfs_create_u16
+VM414:1 debugfs_create_u32
+VM414:1 debugfs_create_u64
+VM414:1 debugfs_create_ulong
+VM414:1 debugfs_create_x8
+VM414:1 debugfs_create_x16
+VM414:1 debugfs_create_x32
+VM414:1 debugfs_create_x64
+VM414:1 debugfs_create_size_t
+VM414:1 debugfs_create_atomic_t
+VM414:1 debugfs_create_bool
+VM414:1 debugfs_create_blob
+VM414:1 debugfs_create_u32_array
+VM414:1 debugfs_print_regs32
+VM414:1 debugfs_create_regset32
+VM414:1 debugfs_create_devm_seqfile
+VM414:1 handle_t
+VM414:1 journal_t
+VM414:1 jbd2_inode
+VM414:1 jbd2_journal_handle
+VM414:1 journal_s
+VM414:1 jbd2_journal_force_commit_nested
+VM414:1 jbd2_journal_force_commit
+VM414:1 jbd2_journal_init_dev
+VM414:1 jbd2_journal_init_inode
+VM414:1 jbd2_journal_update_sb_errno
+VM414:1 jbd2_journal_load
+VM414:1 jbd2_journal_destroy
+VM414:1 jbd2_journal_check_used_features
+VM414:1 jbd2_journal_check_available_features
+VM414:1 jbd2_journal_set_features
+VM414:1 jbd2_journal_flush
+VM414:1 jbd2_journal_wipe
+VM414:1 jbd2_journal_abort
+VM414:1 jbd2_journal_errno
+VM414:1 jbd2_journal_clear_err
+VM414:1 jbd2_journal_ack_err
+VM414:1 jbd2_journal_recover
+VM414:1 jbd2_journal_skip_recovery
+VM414:1 jbd2_journal_start
+VM414:1 jbd2_journal_start_reserved
+VM414:1 jbd2_journal_extend
+VM414:1 jbd2__journal_restart
+VM414:1 jbd2_journal_lock_updates
+VM414:1 jbd2_journal_unlock_updates
+VM414:1 jbd2_journal_get_write_access
+VM414:1 jbd2_journal_get_create_access
+VM414:1 jbd2_journal_get_undo_access
+VM414:1 jbd2_journal_set_triggers
+VM414:1 jbd2_journal_dirty_metadata
+VM414:1 jbd2_journal_forget
+VM414:1 jbd2_journal_stop
+VM414:1 jbd2_journal_try_to_free_buffers
+VM414:1 jbd2_journal_invalidatepage
+VM414:1 splice_to_pipe
+VM414:1 generic_file_splice_read
+VM414:1 splice_from_pipe_feed
+VM414:1 splice_from_pipe_next
+VM414:1 splice_from_pipe_begin
+VM414:1 splice_from_pipe_end
+VM414:1 __splice_from_pipe
+VM414:1 splice_from_pipe
+VM414:1 iter_file_splice_write
+VM414:1 generic_splice_sendpage
+VM414:1 splice_direct_to_actor
+VM414:1 do_splice_direct
+VM414:1 pipe_buffer
+VM414:1 pipe_inode_info
+VM414:1 pipe_buf_get
+VM414:1 pipe_buf_release
+VM414:1 pipe_buf_confirm
+VM414:1 pipe_buf_steal
+VM414:1 generic_pipe_buf_steal
+VM414:1 generic_pipe_buf_get
+VM414:1 generic_pipe_buf_confirm
+VM414:1 generic_pipe_buf_release
+undefined

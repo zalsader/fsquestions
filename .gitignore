@@ -1,0 +1,11 @@
+main.pdf
+main.aux
+main.log
+main.out
+main.synctex.*
+comment.cut
+main.fls
+main-cache.yaml
+main.bbl
+main.blg
+*-converted-to.pdf

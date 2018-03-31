@@ -1,0 +1,2 @@
+select concat("insert into fsfunctionposts (postId, postTypeId, fsId) select p.Id as postId, p.postTypeId as postTypeId, ", id, " as fsId from postsfiltered p where match(p.title, p.body) against ('", name, "') and p.PostTypeId = 1; insert into fsfunctionposts (postId, answerPostId, postTypeId, fsId) select p.parentId as postId, p.Id as answerPostId, p.postTypeId as postTypeId, ", id, " as fsId from postsfiltered p where match(p.title, p.body) against ('", name, "') and p.PostTypeId = 2;")
+from fsfunction

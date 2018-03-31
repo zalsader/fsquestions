@@ -1,3 +1,5 @@
+// scrapes functions and categories from https://www.kernel.org/doc/html/latest/filesystems/index.html
+
 var cats = {};
 $('h2').each(function(index1) {
     var $parent = $(this);

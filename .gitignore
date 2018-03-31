@@ -9,3 +9,4 @@ main-cache.yaml
 main.bbl
 main.blg
 *-converted-to.pdf
+.env

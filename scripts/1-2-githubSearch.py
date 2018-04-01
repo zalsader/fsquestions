@@ -10,7 +10,7 @@ USERNAME = os.getenv('USERNAME')
 TOKEN = os.getenv('TOKEN')
 LOGFILE = 'githubSearch.log'
 SOURCEFILE = 'kernelfsfunctions.txt'
-RESULTFILE = 'kernelfsfunctions_usage.csv'
+RESULTFILE = 'csv/1-2-fsfunctions_usage'
 
 def search_github(term, languages):
     query = term + ' language:' + ','.join(languages)

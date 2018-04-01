@@ -1,0 +1,1 @@
+INSERT IGNORE INTO postsfiltered SELECT * FROM posts where parentid in (select id from postsfiltered) and id not in (select id from postsfiltered);

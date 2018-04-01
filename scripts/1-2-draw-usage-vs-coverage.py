@@ -44,5 +44,5 @@ if __name__ == '__main__':
     plt.ylim([0.75,500])
     plt.xlabel('Number of Github References')
     plt.ylabel('Number of Questions Referenced')
-    plt.show()
-    #plt.savefig('figures/1-2-usage-vs-coverage.pdf', bbox_inches='tight')
+    #plt.show()
+    plt.savefig('figures/1-2-usage-vs-coverage.pdf', bbox_inches='tight')

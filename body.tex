@@ -8,7 +8,8 @@ Is an api older than the internet still documented well on qa websites
 study shows that stackoverflow is the most visited
 Others show its dymanics on recent API
 
-
+Important when writing character device drivers or any other device driver[https://www.tldp.org/LDP/lkmpg/2.4/html/x579.html]
+[https://www.nxp.com/files-static/soft_dev_tools/doc/ref_manual/Linux%20Device%20Drivers.pdf]
 documentation is hard to understand [ref]
 Additionally, many POSIX functions share similar names, while others have different flags that change their behavior[example]
 Explain coverage
@@ -48,16 +49,24 @@ Model with types
   \end{itemize}
   \item
   RQ2 What kind of questions are asked about the APIs?
+  \begin{itemize}
+    \item
+    RQ2.1 What are the most common keywords that appear in questions?
+    \item
+    RQ2.2 How often do pairs of components appear together in questions?
+  \end{itemize}
   \item
-  RQ3 How much confusion arises when discussing the APIs? To measure this, we ask: How often do questions compare between many different APIs? TODO: analyze these questions
 \end{itemize}
-
+RQ2.2 tries to understand how different functions are used and asked for together. This could be used to build models...
 To verify that the data follows the general trend of [ref]
 
 Contribution:
 - Reproduces the results of earlier studies on different datasets
 - Analyzes Questions that mention two or more functions in an attempt to show which two questions are confused together or asked about together
 
+Understanding quantitative qualities about questions and linking them to qualitative ones can help build models that depend on theat sort of questions.
+
+%TODO Check for consstency
 
 \section{Data and Methodology}
 Research questions?
@@ -77,6 +86,7 @@ In our case, the size of each question is reasonably small, so we could do that.
 
 Usage Data: The usage data was gathered by doing searching for the filesystem API using Github code search API. The search was done using a script that issuea a search request for each function and record the total number of records as reported by the response The search was limited to files written in c only to prevent any similar named stuff from other languages from affecting the data.
 with a random wait time between 3-10 seconds to circumvent the rate-limiting on the server.
+Github code search doesn't include forked repositories unless the forked repository has more stars than the original repo.
 % TODO define thread
 Frequency analysis: to answer RQ2, we did a basic frequency analysis on the threads.
 Question texts were sanitized by removing all html tags.
@@ -143,6 +153,7 @@ This means that there are still questions to be asked about the API and the docu
 
 RQ2
 Questions asked about the API
+RQ2.1
 To answer this question, we identify the keywords most common in questions and answers that contain any of the linux filesystem API functions and structures, excluding code samples as defined in section[ref]. Since the words are stemmed using the porter stemmer, many of the terms in the figure appear to be misspelled or incomplete.
 From the single word results, it seems that most questions ask about how to `use' the functions, how they `work', and some also ask for `examples'. Since we are asking questions about the filesystem API, the words `write', `read' and `kernel' appeared very often. In addition, a lot of questions reported `problems' or asked for `solutions'. The results from mining answers for single word frequency do not seem very different.
 
@@ -161,8 +172,42 @@ The results from mining bigrams and trigrams of answers are very similar, with t
   \label{fig:wcall}
 \end{figure}
 
-RQ3
+RQ2.2
 Common functions together
+This questions explores how often do questions ask about more than one function or API. This peeks into the question of confusion. To do that, we searched the recorded results from [ref] for questions that contain two or more API functions. The table[] shows the functions that appear together the most within the same category, and table [] shows how much appears for different categories. From the results we can see that, within the same category, sequential file processing methods \texttt{seq_*} are very commonly asked about together within the same question. This is because they are commonly used together to build device drivers, and many questions provide examples on how to use them, see this question [https://stackoverflow.com/questions/17663692/file-operations-in-drivers].
+Additionally, \texttt{debugfs_create_dir} and \texttt{debugfs_create_file} are commonly found togetherm since both of them can be used to create directories. The difference between them is that the former is the recommended function to create directories in debugfs, while the latter can be used to create directories and files alike. Most answers that reference both function explain this difference, including this one [https://stackoverflow.com/questions/42235800/write-to-debugfs-from-linux-kernel-module]
+debugfs [https://www.kernel.org/doc/Documentation/filesystems/debugfs.txt] is a simple-to-use RAM-based file system commonly used for debugging. For that reason, we can find many questions that contain examples for using \texttt{debugfs_*} functions.
+
+%TODO include tables
+
+summary
+
+Threats to validity
+Generalizability:  RQ1 generalizes findings of previus work in java api domain into the linux filesystem API domain, but it is still not known if this generalizes to other domains.
+stackoverflow stuff
+The remaining threats listed below arise from the fact that StackOverflow is unstructured
+natural language text, and extracting information therefrom is naturally a noisy
+process.
+However, a mention of a class in an SO question or answer does not necessarily mean
+that the message is about that class; but it does mean that the message is relevant somehow
+to the class.
+splitting
+similar names
+incorrect tags or formatting: often fixed by moderators.
+Github only includes opensource projects in its search, which means that the usage data we derived is biased towards opensource projects. Github allows any user to fork any repository they want, this is mitigated by the github code search itself, since it does not include any forks that have less stars than the original repositories. there's a possibility of functions sharing the same name, but the function names we considered are unique enough as we concluded from manual inspection of the search results.
+word frequency analysis might be biased towards functions that have more questions about them. This was not found to be a major concern in our analysis, but we could explore calculating the word frequency per function or category of functions.
+
+future work
+Qualitative study of the questions we found,
+which can help produce machine learning models to predict stuff
+Include other sources like linux mailing lists and issues in the study.
+Expant to other linux kernel functions
+We could use the
+
+
+%TODO maybe search for other keywords with functions?
+
+
 
 
 

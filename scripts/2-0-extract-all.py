@@ -74,6 +74,7 @@ if __name__ == '__main__':
 
     abodies = ' '.join(read_and_filter(QBFILENAME))
     afreq = get_word_frequency(abodies)
+    # TODO write to file
     wordcloud = wc.generate_from_frequencies(afreq)
     plt.figure(figsize=(20,10))
     plt.imshow(wordcloud, interpolation="bilinear")

@@ -11,7 +11,7 @@ Others show its dymanics on recent API
 
 documentation is hard to understand [ref]
 Additionally, many POSIX functions share similar names, while others have different flags that change their behavior[example]
-
+Explain coverage
 posix has known problems
 this study complains about it and its security issues
 Many blog posts alsocomplain about its usage
@@ -33,9 +33,8 @@ The work most similar to ours is recent work by Parnin et al. who also evaluated
 the degree to which specific APIs are discussed within the community [15].
 '
 Theory?
+Model with types
 
-
-\subsection{Research questions}
 \begin{itemize}
   \item
   RQ1 Can we rely on the Stack Overflow crowd to discuss all of Linux kernel filesystem APIs?
@@ -48,7 +47,116 @@ Theory?
     RQ1.3 Are there still ongoing discussions about these APIs? How fast are they covered?
   \end{itemize}
   \item
-  RQ2 What kind of questions are asked about the APIs? Which keywords appear commonly among each group of filesystem APIS
+  RQ2 What kind of questions are asked about the APIs?
   \item
-  RQ3 How much cunfusion arises when discussing the APIs? To measure this, we ask: How often do questions compare between many different APIs?
+  RQ3 How much confusion arises when discussing the APIs? To measure this, we ask: How often do questions compare between many different APIs? TODO: analyze these questions
 \end{itemize}
+
+To verify that the data follows the general trend of [ref]
+
+Contribution:
+- Reproduces the results of earlier studies on different datasets
+- Analyzes Questions that mention two or more functions in an attempt to show which two questions are confused together or asked about together
+
+
+\section{Data and Methodology}
+Research questions?
+data:
+Filesystem API : scraped function, structure names and the categories they fall into from the official docs [refs], then verified by hand. The documentation is wellformatted, so it was easy to get header names and using a script written in jquery javascript. The result was loaded to a database, and each function was given a unique id and assigned to a category.
+The API functions are mostly not changed between versions [ref], but we used the ones from 4.16.0
+
+Stack Overflow: StackOverflow provides data dumps, under a Creative Commons license on archive.org every three onths along with the other stackexchange websites. downloaded a database dump (dates to 12/2017), loaded on a database. due to the huge size of data (42 Gb in total), posts were filtered by tags (mention here), then all the answeres related to them were added. All stackoverflow posts are required to be tagged, and most tagged posts contain the language in qustion so it was ok to filter. Tags are mentioned in text inside the posts table, and not in a separate table as in the data explorer [ref]. so To improve the performance of the data filtereing, the tags column was added to a fulltext index [ref]. this resulted in an order of magnitude increase in performance (several minutes instead of several hours when using like search) over a slight decrease in accuracy.
+Linking: To gather our data, we used a process adopted from Parnin [15].
+In our case, a link is a connection between a StackOverflow question and a Linux filesystem function. There are word links which occur in words, url links in urls, code links in <code> tags and code block links inside <pre> code blocks.
+Found using case-insensitive word boundary search.
+search was done on title and body of questions and answers, and each matching question was recorded in the database. We also searched the answers, and each matching answer was reported to belong to the question of the answer. Further queries were made for each RQ, as explained in [section somewhere]
+Fulltext was used again to provide faster results (several minutes instead of hours). Fulltext index builds a full index of all the words in the selected fields and ranks them .. % check how it works
+ According to the documentation, [ref] it produces no false positives, but might miss some cases for very large texts [ref]
+In our case, the size of each question is reasonably small, so we could do that.
+% mention the number of matches
+
+Usage Data: The usage data was gathered by doing searching for the filesystem API using Github code search API. The search was done using a script that issuea a search request for each function and record the total number of records as reported by the response The search was limited to files written in c only to prevent any similar named stuff from other languages from affecting the data.
+with a random wait time between 3-10 seconds to circumvent the rate-limiting on the server.
+% TODO define thread
+Frequency analysis: to answer RQ2, we did a basic frequency analysis on the threads.
+Question texts were sanitized by removing all html tags.
+We did not consider code samples, as they are irrelevant to what the question asks
+We tokenized the texts by word boundary
+Then stemmed them using porter stemmer [ref]
+Then filtered out words considred stop words. We used the list of default stop words in the English language, and included other stop words common in stackoverflow conversations like "code", "please", "thanks". The full list is available in the git repo below.
+After that, we fed them to a frequency counter.
+We did this for questions alone, and for answers.
+
+Reproducibility:
+All our data are provided publically on github. Contains scripts, queries and result csv files.
+https://github.com/zalsader/LinuxFSQuestions
+
+\section{Results}
+\subsection{Data Reliability}
+we examin RQ1...
+\subsubsection{Coverage}
+RQ1.1
+Are they widely covered
+look for functions
+Coverage is the percentage of the API elements that have at least n threads discussing
+the class, where n is called the saturation level
+Report on coverage by multiple n. % TODO table?
+\begin{figure}
+  \includegraphics{scripts/figures/1-1-coveragebycategory.pdf}
+  \caption{Coverage by category}
+  \label{covbycategory}
+\end{figure}
+
+We also examined the coverage per category, and the results are in figure
+Although old, the api is not yet widely covered
+but enough to continue our analysis
+Number of threads? %TODO
+RQ1.2
+Are they related to the usage
+We mined the usage date from github using thescript.
+Results are plotted in the graph on a log-log scale
+We fount that we have a slope of 0.51 and regression of? %TODO
+A Spearman’s rank correlation coefficient?
+which translates into a sublinear dependence of y on x
+On the average, the demand for class documentation from SO grows slower
+than class usage in the code. as past studies found
+
+
+\begin{figure}
+  \includegraphics{scripts/figures/1-2-usage-vs-coverage}
+  \caption{Usage vs number of references on a log-log scale}
+  \label{usageref}
+\end{figure}
+
+RQ1.3
+Coverage over time
+Coverage is increasing steadily over time
+It is interesting to see that the coverage is still growing steadily even after 30 years from the API
+This means that there are still questions to be asked about the API and the documentation available is still not enough
+
+\begin{figure}
+  \includegraphics{scripts/figures/1-3-coverage-by-time}
+  \caption{The coverage for the API over time}
+  \label{usageref}
+\end{figure}
+
+
+RQ2
+Questions asked about the API
+%TODO show results and analyze
+
+RQ3
+Common functions together
+
+
+
+
+
+
+
+
+
+
+
+
+.

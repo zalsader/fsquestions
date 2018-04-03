@@ -57,7 +57,7 @@ We study the following questions:
 
 \textbf{Stack Overflow}: Stack Exchange, the company behind Stack Overflow and other Q\&A websites, publishes data dumps of the databases of all its websites, under a Creative Commons license on archive.org\footnote{https://archive.org/details/stackexchange} once every three months. We downloaded a database dump of Stack Overflow that dates to 12/2017, converted the XML to SQL and loaded on a relational database using a tool called SODDI\footnote{https://github.com/BrentOzarULTD/soddi}. Due to the huge size of data (42 Gb after loading to the database, for 39 million records), we only considered posts which contained the following tags: \textit{c, c++, linux, kernel, kernel-module, posix, and driver}. Since answers are not tagged, we included all the answers on matched questions. All stackoverflow posts are required to be tagged, and most tags are accurate since Stack Overflow is heavily moderated. The tags in the data dump are listed in plain text inside the posts table, and not in a separate table, so to improve the performance of the data filtering, the tags column was added to a fulltext index~\cite{Hamilton2001}. This resulted in an order of magnitude increase in performance over a regular expression search (several minutes instead of several hours) with a slight decrease in recall. The filtered dataset contains 3.1 million records and is 4.5 Gb in size.
 
-\textbf{Linking}: To gather our data, we used a process adopted from Parnin et al.~\cite{Parnin2012CrowdDE}.
+\textbf{Linking Methodology}: To gather our data, we used a process adopted from Parnin et al.~\cite{Parnin2012CrowdDE}.
 In our case, a link is a connection between a StackOverflow question and a filesystem API function or structure. Figure \ref{fig:soq} shows a sample Stack Overflow question annotated with the different types of links: word links which occur in regular text, code links occur in \texttt{<code></code>} tags and include a single function or class name, and code block links are enclosed within \texttt{<pre></pre>} tags representing examples and stack traces. We searched the title and body of the questions and related answers for any mentions of filesystem function and structures using case-insensitive word-boundary full text search, and recorded the results in the database. We found a total of 981 matches between posts and functions.
 
 \begin{figure*}[t!]
@@ -66,24 +66,19 @@ In our case, a link is a connection between a StackOverflow question and a files
   \label{fig:soq}
 \end{figure*}
 
-Usage Data: The usage data was gathered by doing searching for the filesystem API using Github code search API. The search was done using a script that issuea a search request for each function and record the total number of records as reported by the response The search was limited to files written in c only to prevent any similar named stuff from other languages from affecting the data.
-with a random wait time between 3-10 seconds to circumvent the rate-limiting on the server.
-Github code search doesn't include forked repositories unless the forked repository has more stars than the original repo.
-% TODO define thread
-Frequency analysis: to answer RQ2, we did a basic frequency analysis on the threads.
-Question texts were sanitized by removing all html tags.
-We did not consider code samples, as they are irrelevant to what the question asks
-We tokenized the texts by word boundary
-Then stemmed them using porter stemmer [ref]
-Then filtered out words considred stop words. We used the list of default stop words in the English language, and included other stop words common in stackoverflow conversations like "code", "please", "thanks". The full list is available in the git repo below.
-After that, we fed the single words, bigrams and trigrams to a frequency counter.
-We did this for questions alone, and for answers.
+\textbf{Usage Data}: The usage data was gathered by searching for the filesystem API functions on the Github code search API\footnote{https://developer.github.com/v3/search/\#search-code}. We used a script that issued one request for each function and recorded the total number of records reported by the response. We limited our search to files written in \texttt{C} only to prevent any similarly named functions from other programming languages from inflating the search result. Between each API call, we waited a random period of time between 3-10 seconds to comply with the rate limits and robot detection imposed by the server. We note that Github code search does not include forked repositories unless they have more stars than the original repositories.
 
-Reproducibility:
-All our data are provided publically on github. Contains scripts, queries and result csv files.
+\subsection{Data Analysis}\label{subsec:analysis}
+Most research questions (all RQ1 and RQ2.2) are satisfied by queries on the cached list of results recorded on the database joined with the original question data. RQ2.1 includes a technique in natural language processing called frequency analysis, described below.
+
+\textbf{Frequency Analysis}: To answer RQ2.1, we performed a basic frequency analysis with single words, bigrams and trigrams on the questions and their answers. First, we sanitized question texts by removing all html tags and code blocks since they are irrelevant to what the question asks. Then, we tokenized the texts by word boundary, and stemmed them using porter stemmer~\cite{Porter1980}. After that, we filtered out words we considered stop words, including the list of default stop words in the English language, combined with other stop words common in Stack Overflow conversations, such as "code", "please", "thanks". Finally, we generated single words, bigrams and trigrams, and fed each of them individually to a frequency counter. We applied this method for question titles and bodies without the answers, and then to the answers only.
+
+\subsection{Reproducibility}\label{subsec:repr}
+All our data is provided publically on GitHub. The following repository contains scripts, queries and result csv files used in this paper:
+
 https://github.com/zalsader/LinuxFSQuestions
 
-\section{Results}
+\section{Results} \label{sec:results}
 \subsection{Data Reliability}
 we examin RQ1...
 \subsubsection{Coverage}
@@ -93,11 +88,11 @@ look for functions
 Coverage is the percentage of the API elements that have at least n threads discussing
 the class, where n is called the saturation level
 Report on coverage by multiple n. % TODO table?
-\begin{figure}
+\begin{figure*}[t!]
   \includegraphics{scripts/figures/1-1-coveragebycategory.pdf}
   \caption{Coverage by category}
   \label{fig:covbycategory}
-\end{figure}
+\end{figure*}
 
 We also examined the coverage per category, and the results are in figure
 Although old, the api is not yet widely covered

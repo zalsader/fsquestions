@@ -22,7 +22,7 @@ if __name__ == '__main__':
     (categories, sizes, coverages) = read_coverage(FILENAME)
     #TODO hardcoded labels
     categories[1] = 'Events based on\nfile descriptors'
-    categories[2] = 'The Filesystem for\nExporting Kernel Objects'
+    categories[2] = 'The Filesystem\nfor Exporting\nKernel Objects'
     categories[6] = 'The Filesystem\ntypes'
     categories[9] = 'Registration\nand Superblocks'
     categories[12] = 'Journalling API\nData Types'
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     maxi=max(coverages)
     norm = matplotlib.colors.Normalize(vmin=mini, vmax=maxi)
     colors = [cmap(norm(value)) for value in coverages]
-    plt.figure(1, figsize=(10,6))
+    plt.figure(1, figsize=(9,7))
     plt.subplot(111)
     squarify.plot(sizes=sizes, alpha=.7, color=colors, label=categories)
     plt.axis('off')

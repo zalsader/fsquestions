@@ -3,6 +3,7 @@ import matplotlib
 import numpy as np
 import squarify
 import csv
+from scipy.stats import linregress
 
 FSTALLYNAME = 'csv/1-1-1-fstally.csv'
 FSUSAGENAME = 'csv/1-2-fsfunctions_usage.csv'
@@ -31,6 +32,7 @@ if __name__ == '__main__':
     plt.plot(xdata, ydata, 'ko', alpha=0.5)
     logx = np.log(xdata)
     logy = np.log(ydata)
+    print linregress(logx,logy)
     coof = np.polyfit(logx, logy, 1)
     p = np.poly1d(coof)
     yfit = lambda x: np.exp(p(np.log(x)))

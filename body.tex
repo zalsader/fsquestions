@@ -6,7 +6,7 @@ The problem of documentation is especially prevalent for the filesystem APIs, be
 
 Recently, many studies have shown that the POSIX standard API, which the Linux kernel filesystem APIs follow, have many drawbacks for modern operating systems. Zadok et al~\cite{Zadok2017} highlight some of the issues in POSIX and propose some ideas to improve it or replace it. One major issue they mention is that, by design, POSIX interface methods are susceptible to ``Time of Check To Time of Use'' (TOCTTOU) vulnerabilities~\cite{Wei2005}. Additionally Atlidakis el al~\cite{Atlidakis2016} explain how the common applications have designed around the POSIX APIs to overcome their shortcomings, and how this practice is not sustainable and can lead to suboptimal performance.
 
-This study highlights how one the Linux kernel filesystem, which follow POSIX standards, are asked about on Stack Overflow. This aims to understand the software engineering viewpoint on the filesystem APIs and whether developers discuss the design issues mentioned above on Stack Overflow. More generally, it aims to understand what questions are asked about these APIs on Stack Overflow. We do that by extracting single-word, bigram and trigram frequencies in questions that contain at least one of the filesystem APIs. We also examine which filesystem APIs are likely to be asked about together, indicating codependency or confusion.
+This study highlights how the Linux kernel filesystem APIs, which follow POSIX standards, are asked about on Stack Overflow. This aims to understand the software engineering viewpoint on the filesystem APIs and whether developers discuss the design issues mentioned above on Stack Overflow. More generally, it aims to understand what questions are asked about these APIs on Stack Overflow. We do that by extracting single-word, bigram and trigram frequencies in questions that contain at least one of the filesystem APIs. We also examine which filesystem APIs are likely to be asked about together, indicating codependency or confusion.
 
 The contributions of this study are as follows:
 \begin{itemize}
@@ -49,7 +49,6 @@ We study the following questions:
     \item
     \textbf{RQ2.2} How often do pairs of components appear together in questions?
   \end{itemize}
-  \item
 \end{itemize}
 
 \subsection{Data Collection}\label{subsec:data}
@@ -130,6 +129,8 @@ From the single word results, it seems that most questions ask about how to `use
 
 The results for bigrams and trigrams seem to result in more interesting terms, after the most common `kernel module' and `linux kernel module', many questions contained `device driver', `block device' and `linux device driver' in reference to questions about vfs functions related to device drivers, like this post \footnote{https://stackoverflow.com/q/11578504}, which asks about ``how \texttt{sys\_open} works?'' in the context of a character device driver. Additionally, many questions asked for a `better way', or the `best way' to achieve a task. The results from mining bigrams and trigrams of answers are very similar, with the difference that `better way', `best way' and `create new' appear more often than other terms in the question.
 
+In any of these keyword frequencies, we did not find many questions that directly reference the design of the API. This could be because advanced users of the API use different methods of communication when discussing design issues, like mailing lists or other online forums. It could also be that the model we used is too simple to find intricate questions like these, and manual inspection of questions might be needed.
+
 \begin{figure*}[t!]
   \centering
   \subfloat[Single Words]{\includegraphics[width=\columnwidth]{scripts/figures/2-0-1-allquestions.pdf}}
@@ -165,44 +166,16 @@ Debugfs\footnote{https://www.kernel.org/doc/Documentation/filesystems/debugfs.tx
 \end{tabular}
 \end{table*}
 
+\section{Threats to Validity}
+There are some threats to the validity and applicability of this study, and we examine them in this section. \textbf{Generalizability}: The first research question generalizes findings of previous work done on Java API and applications domain into the Linux filesystem API domain, but it is still not known if this generalizes to other domains.
 
-summary
+\textbf{Stack Overflow} questions are unstructured natural language text, so extracting information from them is naturally a noisy process. Additionally, when we look for mentions of a function inside Stack Overflow questions, finding a mention does not necessarily mean that the question is about that specific function, but just that it is related to the question somehow. There is a chance that the function we find in Stack Overflow is a function with a similar name from a different library, but it is very unlikely because most functions start with a `namespace', like \texttt{seq\_*}. Since Stack Overflow questions are asked by humans, there is a possibility that incorrect tags or formatting are used in a question; however, the website is highly moderated, and any such mistake would be fixed by moderators within a few days.
 
-Threats to validity
-Generalizability:  RQ1 generalizes findings of previus work in java api domain into the linux filesystem API domain, but it is still not known if this generalizes to other domains.
-stackoverflow stuff
-The remaining threats listed below arise from the fact that StackOverflow is unstructured
-natural language text, and extracting information therefrom is naturally a noisy
-process.
-However, a mention of a class in an SO question or answer does not necessarily mean
-that the message is about that class; but it does mean that the message is relevant somehow
-to the class.
-splitting
-similar names
-incorrect tags or formatting: often fixed by moderators.
-Github only includes opensource projects in its search, which means that the usage data we derived is biased towards opensource projects. Github allows any user to fork any repository they want, this is mitigated by the github code search itself, since it does not include any forks that have less stars than the original repositories. there's a possibility of functions sharing the same name, but the function names we considered are unique enough as we concluded from manual inspection of the search results.
-word frequency analysis might be biased towards functions that have more questions about them. This was not found to be a major concern in our analysis, but we could explore calculating the word frequency per function or category of functions.
+\textbf{GitHub} code search only includes open source projects, which means that the usage data we derived could be biased towards open source projects. This data is however the best data we can get, and it is considered to be representative of the workloads. Additionally, GitHub allows any user to fork any repository they want, so we might have duplicates in the search results, but this is mitigated by the github code search itself, since it does not include any forks that have less stars than the original repositories. There is also the possibility of functions sharing the same name, but the function names we considered are unique enough as we concluded from manual inspection of the search results.
+The \textbf{word frequency} analysis we did in RQ2.1 might be biased towards functions that have more questions related to them. This was not found to be a major concern in our analysis, but we could explore calculating the word frequency per function or category of functions.
 
-future work
-Qualitative study of the questions we found,
-which can help produce machine learning models to predict stuff
-Include other sources like linux mailing lists and issues in the study.
-Expant to other linux kernel functions
-We could use the
+\section{Conclusion}
+In this study, we examined the questions asked about the Linux filesystem API on Stack Overflow, and demonstrated that it is a moderately reliable source of information on that API. We also showed that the community is still engaged in questions and discussions about Linux filesystem APIs, even after about a long time from its birth.
+In addition, we quantitatively studied which keywords are the most common in questions are asked about the APIs. Most of these keywords were asking for examples, or for better ways to do operations, or for explanations about device drivers. We also examined which of filesystem APIs are likely to be asked about together, indicating codependency, as an \texttt{seq\_*} functions or confusion, as in \texttt{debugfs\_create\_dir} and  \texttt{debugfs\_create\_file}.
 
-
-%TODO maybe search for other keywords with functions?
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
+In the future, we would like to expand our study with a qualitative examination of the questions we found. Since the coverage of our data was low, we would like to include other sources, like Linux mailing lists and issues in the study. We could also accompany the qualitative study with interviews asking developers of kernel modules to give their thoughts about the filesystem kernel functions and other kernel functions. The same study could be applied to any other module of the kernel, or could be expanded to include all kernel functions.

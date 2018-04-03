@@ -1,88 +1,70 @@
-\section{Introduction}
+\section{Introduction}\label{sec:introductio}
+Linux, which was introduced in 1991, is the most commonly deployed operating system in the market~\cite{Love2010}. Even though it has many different distributions, they all share the same kernel module and interface~\cite{Bovet2006}. A key component of the kernel is the Virtual Filesystem (VFS)~\cite{Sandberg1988}, which implements the file and filesystem-related interfaces provided to user-space programs. This allows programs to use standard Unix system calls to read and write to various filesystems, even on different media or across the network. This allowed for the creation of many local and distributed filesystems, including Sun Microsystems' NFS~\cite{Sandberg1988} and Google's GFS~\cite{Ghemawat2003}, as well as many device drivers, like character device drivers~\cite{Salzman2009, Corbet2005}.
 
-What is linux filesystem api?
-Why is it important
-How many years it has been ParComputind
-How it's learned today
-Is an api older than the internet still documented well on qa websites
-study shows that stackoverflow is the most visited
-Others show its dymanics on recent API
+When software system developers need to learn about the Linux kernel APIs, they face a difficulty learning about it from the documentation. This is because the documentation usually lacks sufficient examples and explanations. The widespread nature of this issue~\cite{Lethbridge2003, Robillard2009} has lead developers to use other forms of documentation, like wikis, blogs, and online question and answer communities like Stack Overflow, where people ask questions and others answer them.
+The problem of documentation is especially prevalent for the filesystem APIs, because it contains many functions which seem to share the same goal, as well as many flags and arguments which can completely alter the behavior of the function~\cite{Love2010}.
 
-Important when writing character device drivers or any other device driver[https://www.tldp.org/LDP/lkmpg/2.4/html/x579.html]
-[https://www.nxp.com/files-static/soft_dev_tools/doc/ref_manual/Linux%20Device%20Drivers.pdf]
-documentation is hard to understand [ref]
-Additionally, many POSIX functions share similar names, while others have different flags that change their behavior[example]
-Explain coverage
-posix has known problems
-this study complains about it and its security issues
-Many blog posts alsocomplain about its usage
-This is a way to quantify this stuff
-'
-Robillard study the decisions open source developers make while creating
-developer documentation for frameworks and libraries [9]
-s. They concluded that the community answers review, conceptual,
-and how-to questions more frequently than any other type, with review questions
-achieving a 92\% accepted answer rate [21]. Posnett et al. studied the nature of expertise
-among Stack Exchange participants and found that participation in online Q/A sites
-does not necessarily lead to increased expertise as measured by peer scoring [16]
-Parnin and Treude study availability of documentation
-across APIs within StackOverflow and find that it is very uneven, some APIs are well
-covered, while others receive very little attention [20]. Jiau and Yang address this concern
-and assert that more obscure API components benefit from a trickle down affect of
-similar API components [11].
-The work most similar to ours is recent work by Parnin et al. who also evaluated
-the degree to which specific APIs are discussed within the community [15].
-'
-Theory?
-Model with types
+Recently, many studies have shown that the POSIX standard API, which the Linux kernel filesystem APIs follow, have many drawbacks for modern operating systems. Zadok et al~\cite{Zadok2017} highlight some of the issues in POSIX and propose some ideas to improve it or replace it. One major issue they mention is that, by design, POSIX interface methods are susceptible to ``Time of Check To Time of Use'' (TOCTTOU) vulnerabilities~\cite{Wei2005}. Additionally Atlidakis el al~\cite{Atlidakis2016} explain how the common applications have designed around the POSIX APIs to overcome their shortcomings, and how this practice is not sustainable and can lead to suboptimal performance.
 
+This study highlights how one the Linux kernel filesystem, which follow POSIX standards, are asked about on Stack Overflow. This aims to understand the software engineering viewpoint on the filesystem APIs and whether developers discuss the design issues mentioned above on Stack Overflow. More generally, it aims to understand what questions are asked about these APIs on Stack Overflow. We do that by extracting single-word, bigram and trigram frequencies in questions that contain at least one of the filesystem APIs. We also examine which filesystem APIs are likely to be asked about together, indicating codependency or confusion.
+
+The contributions of this study are as follows:
+\begin{itemize}
+  \item We demonstrate that Stack Overflow is a somewhat reliable source of information on Linux filesystem APIs.
+  \item We show that the community is still engaged in questions and discussions about Linux filesystem APIs, even after about 30 years from its birth.
+  \item We quantitatively study which keywords are the most common in questions are asked about the APIs.
+  \item We examine which filesystem APIs are likely to be asked about together, indicating codependency or confusion.
+\end{itemize}
+
+\section{Related Work}\label{sec:relatedw}
+
+Some studies try to use Stack Overflow to give suggestions on usage and code examples inside an ide~\cite{Ponzanelli2014}. There is even a python module that loads examples from Stack Overflow as modules in the code\footnote{https://github.com/drathier/stack-overflow-import}
+Other studies on Stack Overflow have looked qualitatively and quantitatively into Unanswered questions~\cite{Asaduzzaman2013} to understand why they are still unanswered, and on Deleted questions~\cite{Correa2014} to understand the reasons behind the deletion. Gruetze et al.~\cite{Gruetze2016} study the dynamics and topic shifts of Stack Overflow over time. Vasilescu et al~\cite{Vasilescu2013} study how the activity of users on Github affects their activity on Stack Overflow.
+
+The closest study to ours is the early investigation into the coverage and dynamics of crowd documentation on Stack Overflow by Parnin et al.~\cite{Parnin2012CrowdDE}, where they studied several Java APIs and how much of the classes had questions asked about them on Stack Overflow. Another close study is by Kavaler et al.~\cite{Kavaler2013}, which discusses the relationship between usage of an Adnroid API mined from real application to the questions asked about it on Stack Overflow. The first half of our study discusses similar research questions but in a different language (C instead of Java), with different demographics, and a relatively older API.
+
+\section{Methodology}\label{sec:methodology}
+In this section, we explain our research questions, how we collected our data, and how we analyzed it.
+\subsection{Research Questions}\label{subsec:rq}
+First, it is important to study whether we can rely on the Stack Overflow community as a documentation of Linux kernel filesystem APIs, and whether we can rely on it to study questions related to that API. To achieve that, we first examine the coverage of the filesystem API on Stack Overflow. Coverage in our context refers to the percentage of filesystem functions and structures for which there are at least n questions that mention it on Stack Overflow. We also examine the relationship between the usage of a function in opensource projects on GitHub and the amount of questions that mention it. Since the API is old, we wanted to see whether it is still discussed in Q\&A communities, and where these discussions are going. Additionally, this part of the study if the results and the general trends identified in previous studies~\cite{Parnin2012CrowdDE} also apply to our dataset.
+Second, we need to understand what kinds of problems are Stack Overflow users face when dealing with the filesystem API, which could influence future designers of the APIs. Therefore, we ask about the types of questions asked about the filesystem APIs. Since such question is broad, we focus on the most common keywords in questions and how often do functions appear together in the same function.
+
+We study the following questions:
 \begin{itemize}
   \item
-  RQ1 Can we rely on the Stack Overflow crowd to discuss all of Linux kernel filesystem APIs?
+  \textbf{RQ1} Can we rely on the Stack Overflow crowd to discuss all of Linux kernel filesystem APIs?
   \begin{itemize}
     \item
-    RQ1.1 Are the API methods widely covered?
+    \textbf{RQ1.1} Are the API methods widely covered?
     \item
-    RQ1.2 Is there a relationship between number of discussions around a function and its usage in Github repositories?
+    \textbf{RQ1.2} Is there a relationship between number of discussions around a function and its usage in Github repositories?
     \item
-    RQ1.3 Are there still ongoing discussions about these APIs? How fast are they covered?
+    \textbf{RQ1.3} Are there still ongoing discussions about these APIs? How fast are they covered?
   \end{itemize}
   \item
-  RQ2 What kind of questions are asked about the APIs?
+  \textbf{RQ2} What kind of questions are asked about the APIs?
   \begin{itemize}
     \item
-    RQ2.1 What are the most common keywords that appear in questions?
+    \textbf{RQ2.1} What are the most common keywords that appear in questions?
     \item
-    RQ2.2 How often do pairs of components appear together in questions?
+    \textbf{RQ2.2} How often do pairs of components appear together in questions?
   \end{itemize}
   \item
 \end{itemize}
-RQ2.2 tries to understand how different functions are used and asked for together. This could be used to build models...
-To verify that the data follows the general trend of [ref]
 
-Contribution:
-- Reproduces the results of earlier studies on different datasets
-- Analyzes Questions that mention two or more functions in an attempt to show which two questions are confused together or asked about together
+\subsection{Data Collection}\label{subsec:data}
+\textbf{Filesystem API}: To extract the filesystem API, we used a script to scrape function and structure names, along with the categories they fall into from the official Linux kernel v4.16.0 documentation\footnote{https://www.kernel.org/doc/html/v4.16/filesystems/index.html}, then we manually verified them. The latest documentation is well-formatted, so it was easy to extract header names and using a script written in jquery. The result was loaded to a database, where each function was given a unique id and assigned to a category. In total, we extracted 310 functions and structures, classified into 14 different categories.
 
-Understanding quantitative qualities about questions and linking them to qualitative ones can help build models that depend on theat sort of questions.
+\textbf{Stack Overflow}: Stack Exchange, the company behind Stack Overflow and other Q\&A websites, publishes data dumps of the databases of all its websites, under a Creative Commons license on archive.org\footnote{https://archive.org/details/stackexchange} once every three months. We downloaded a database dump of Stack Overflow that dates to 12/2017, converted the XML to SQL and loaded on a relational database using a tool called SODDI\footnote{https://github.com/BrentOzarULTD/soddi}. Due to the huge size of data (42 Gb after loading to the database, for 39 million records), we only considered posts which contained the following tags: \textit{c, c++, linux, kernel, kernel-module, posix, and driver}. Since answers are not tagged, we included all the answers on matched questions. All stackoverflow posts are required to be tagged, and most tags are accurate since Stack Overflow is heavily moderated. The tags in the data dump are listed in plain text inside the posts table, and not in a separate table, so to improve the performance of the data filtering, the tags column was added to a fulltext index~\cite{Hamilton2001}. This resulted in an order of magnitude increase in performance over a regular expression search (several minutes instead of several hours) with a slight decrease in recall. The filtered dataset contains 3.1 million records and is 4.5 Gb in size.
 
-%TODO Check for consstency
+\textbf{Linking}: To gather our data, we used a process adopted from Parnin et al.~\cite{Parnin2012CrowdDE}.
+In our case, a link is a connection between a StackOverflow question and a filesystem API function or structure. Figure \ref{fig:soq} shows a sample Stack Overflow question annotated with the different types of links: word links which occur in regular text, code links occur in \texttt{<code></code>} tags and include a single function or class name, and code block links are enclosed within \texttt{<pre></pre>} tags representing examples and stack traces. We searched the title and body of the questions and related answers for any mentions of filesystem function and structures using case-insensitive word-boundary full text search, and recorded the results in the database. We found a total of 981 matches between posts and functions.
 
-\section{Data and Methodology}
-Research questions?
-data:
-Filesystem API : scraped function, structure names and the categories they fall into from the official docs [refs], then verified by hand. The documentation is wellformatted, so it was easy to get header names and using a script written in jquery javascript. The result was loaded to a database, and each function was given a unique id and assigned to a category.
-The API functions are mostly not changed between versions [ref], but we used the ones from 4.16.0
-
-Stack Overflow: StackOverflow provides data dumps, under a Creative Commons license on archive.org every three onths along with the other stackexchange websites. downloaded a database dump (dates to 12/2017), loaded on a database. due to the huge size of data (42 Gb in total), posts were filtered by tags (mention here), then all the answeres related to them were added. All stackoverflow posts are required to be tagged, and most tagged posts contain the language in qustion so it was ok to filter. Tags are mentioned in text inside the posts table, and not in a separate table as in the data explorer [ref]. so To improve the performance of the data filtereing, the tags column was added to a fulltext index [ref]. this resulted in an order of magnitude increase in performance (several minutes instead of several hours when using like search) over a slight decrease in accuracy.
-Linking: To gather our data, we used a process adopted from Parnin [15].
-In our case, a link is a connection between a StackOverflow question and a Linux filesystem function. There are word links which occur in words, url links in urls, code links in <code> tags and code block links inside <pre> code blocks.
-Found using case-insensitive word boundary search.
-search was done on title and body of questions and answers, and each matching question was recorded in the database. We also searched the answers, and each matching answer was reported to belong to the question of the answer. Further queries were made for each RQ, as explained in [section somewhere]
-Fulltext was used again to provide faster results (several minutes instead of hours). Fulltext index builds a full index of all the words in the selected fields and ranks them .. % check how it works
- According to the documentation, [ref] it produces no false positives, but might miss some cases for very large texts [ref]
-In our case, the size of each question is reasonably small, so we could do that.
-% mention the number of matches
+\begin{figure*}[t!]
+  \includegraphics[width=\textwidth]{/images/soquestion-annotated.png}
+  \caption{A sample Stack Overflow question with different types of links}
+  \label{fig:soq}
+\end{figure*}
 
 Usage Data: The usage data was gathered by doing searching for the filesystem API using Github code search API. The search was done using a script that issuea a search request for each function and record the total number of records as reported by the response The search was limited to files written in c only to prevent any similar named stuff from other languages from affecting the data.
 with a random wait time between 3-10 seconds to circumvent the rate-limiting on the server.
@@ -157,26 +139,24 @@ RQ2.1
 To answer this question, we identify the keywords most common in questions and answers that contain any of the linux filesystem API functions and structures, excluding code samples as defined in section[ref]. Since the words are stemmed using the porter stemmer, many of the terms in the figure appear to be misspelled or incomplete.
 From the single word results, it seems that most questions ask about how to `use' the functions, how they `work', and some also ask for `examples'. Since we are asking questions about the filesystem API, the words `write', `read' and `kernel' appeared very often. In addition, a lot of questions reported `problems' or asked for `solutions'. The results from mining answers for single word frequency do not seem very different.
 
-The results for bigrams and trigrams seem to result in more interesting terms, after the most common `kernel module' and `linux kernel module', many questions contained `device driver', `block device' and `linux device driver' in reference to questions about vfs functions related to device drivers, like this post [https://stackoverflow.com/questions/11578504/how-sys-open-works]. Additionally, many questions asked for a `better way', or the `best way' to achieve a task.
+The results for bigrams and trigrams seem to result in more interesting terms, after the most common `kernel module' and `linux kernel module', many questions contained `device driver', `block device' and `linux device driver' in reference to questions about vfs functions related to device drivers, like this post \footnote{https://stackoverflow.com/q/11578504}. Additionally, many questions asked for a `better way', or the `best way' to achieve a task.
 The results from mining bigrams and trigrams of answers are very similar, with the difference that `better way', `best way' and `create new' appear more often than other terms.
 %caveat: skewed by large coverage
 
-\begin{figure}
-  \begin{subfigure}
-    \includegraphics{scripts/figures/2-0-1-allquestions.pdf}
-  \end{subfigure}%
-  \begin{subfigure}
-    \includegraphics{scripts/figures/2-0-2-allquestions.pdf}
-  \end{subfigure}%
+\begin{figure*}[t!]
+  \centering
+  \subfloat{\includegraphics[width=0.5\textwidth]{scripts/figures/2-0-1-allquestions.pdf}}
+  \qquad
+  \subfloat{\includegraphics[width=0.5\textwidth]{scripts/figures/2-0-2-allquestions.pdf}}
   \caption{Word clouds generated by the most common words in all matching questions using single words (a) and bigrams (b)}
   \label{fig:wcall}
-\end{figure}
+\end{figure*}
 
 RQ2.2
 Common functions together
-This questions explores how often do questions ask about more than one function or API. This peeks into the question of confusion. To do that, we searched the recorded results from [ref] for questions that contain two or more API functions. The table[] shows the functions that appear together the most within the same category, and table [] shows how much appears for different categories. From the results we can see that, within the same category, sequential file processing methods \texttt{seq_*} are very commonly asked about together within the same question. This is because they are commonly used together to build device drivers, and many questions provide examples on how to use them, see this question [https://stackoverflow.com/questions/17663692/file-operations-in-drivers].
-Additionally, \texttt{debugfs_create_dir} and \texttt{debugfs_create_file} are commonly found togetherm since both of them can be used to create directories. The difference between them is that the former is the recommended function to create directories in debugfs, while the latter can be used to create directories and files alike. Most answers that reference both function explain this difference, including this one [https://stackoverflow.com/questions/42235800/write-to-debugfs-from-linux-kernel-module]
-debugfs [https://www.kernel.org/doc/Documentation/filesystems/debugfs.txt] is a simple-to-use RAM-based file system commonly used for debugging. For that reason, we can find many questions that contain examples for using \texttt{debugfs_*} functions.
+This questions explores how often do questions ask about more than one function or API. This peeks into the question of confusion. To do that, we searched the recorded results from [ref] for questions that contain two or more API functions. The table[] shows the functions that appear together the most within the same category, and table [] shows how much appears for different categories. From the results we can see that, within the same category, sequential file processing methods \texttt{seq\_*} are very commonly asked about together within the same question. This is because they are commonly used together to build device drivers, and many questions provide examples on how to use them, see this question\footnote{https://stackoverflow.com/q/17663692}.
+Additionally, \texttt{debugfs\_create\_dir} and \texttt{debugfs\_create\_file} are commonly found together, since both of them can be used to create directories. The difference between them is that the former is the recommended function to create directories in debugfs, while the latter can be used to create directories and files alike. Most answers that reference both function explain this difference, including this one \footnote{https://stackoverflow.com/q/42235800}
+debugfs\footnote{https://www.kernel.org/doc/Documentation/filesystems/debugfs.txt} is a simple-to-use RAM-based file system commonly used for debugging. For that reason, we can find many questions that contain examples for using \texttt{debugfs\_*} functions.
 
 %TODO include tables
 
